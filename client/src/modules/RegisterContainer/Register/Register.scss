@@ -1,0 +1,16 @@
+.register-paper{
+  width: 25rem;
+  height: 33rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  h2{
+    margin:0;
+  }
+
+  .input{
+    width: 80%;
+  }
+}

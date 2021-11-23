@@ -1,0 +1,18 @@
+.user-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+
+  .button-add-new{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .user-general-info-container{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
