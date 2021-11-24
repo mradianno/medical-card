@@ -6,6 +6,7 @@ const schema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   birthday: { type: Date, required: true },
+  sex: { type: String, required: true },
   card: { type: Types.ObjectId, ref: 'Card' },
   examinationDates: [{ type: Types.ObjectId, ref: 'ExaminationDate' }],
 });

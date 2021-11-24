@@ -12,9 +12,9 @@ const router = Router();
 router.get('', auth, async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.userId });
-    const { firstName, lastName, email, _id } = user;
+    const { firstName, lastName, email, _id, sex } = user;
 
-    if (user) res.json({ firstName, lastName, email, id: _id });
+    if (user) res.json({ firstName, lastName, email, id: _id, sex });
     else res.status(400).json({ message: 'User not found' });
   } catch (e) {
     res.status(500).json({ message: 'Something wrong , please try later' });
@@ -98,7 +98,7 @@ router.get('/diagnostic', auth, async (req, res) => {
   }
 });
 
-// /api/user/diagnostic
+// /api/user/evidence
 router.post('/evidence', async (req, res) => {
   try {
     const link = await Link.findOne({ id: req.body.linkId });
@@ -113,12 +113,12 @@ router.post('/evidence', async (req, res) => {
   }
 });
 
-// /api/user/diagnostic
-router.get('/diagnostic', auth, async (req, res) => {
+// /api/user/evidence
+router.get('/evidence', auth, async (req, res) => {
   try {
-    const diagnostic = await Evidence.find({ User: req.user.userId });
+    const evidence = await Evidence.find({ User: req.user.userId });
 
-    res.json(diagnostic);
+    res.json(evidence);
   } catch (e) {
     res.status(500).json({ message: 'Something wrong , please try later' });
   }

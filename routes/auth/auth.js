@@ -20,7 +20,7 @@ router.post(
       if (!errors.isEmpty())
         return res.status(400).json({ errors: errors.array(), message: 'Wrong data on register' });
 
-      const { email, password, confirmPassword, firstName, lastName, birthday } = req.body;
+      const { email, password, confirmPassword, firstName, lastName, birthday, sex } = req.body;
 
       // compare password with confirmPassword
       if (password !== confirmPassword)
@@ -35,7 +35,14 @@ router.post(
 
       const hashedPassword = await bcrypt.hash(password, 12);
 
-      const user = new User({ email, password: hashedPassword, firstName, lastName, birthday });
+      const user = new User({
+        email,
+        password: hashedPassword,
+        firstName,
+        lastName,
+        birthday,
+        sex,
+      });
       await user.save();
 
       return res.status(201).json({

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const PATH = 'http://localhost:5000/api';
+const PATH = 'http://localhost:5003/api';
 
 export const get = (apiEndpoint, params) =>
   axios.get(PATH + apiEndpoint, params).then((response) => {

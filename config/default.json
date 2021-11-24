@@ -1,5 +1,5 @@
 {
-  "port": 5000,
+  "port": 5003,
   "mongoUri": "mongodb+srv://adrian:qwerty12345@cluster0.wa7ls.mongodb.net/medicalCard?retryWrites=true&w=majority",
   "jwtSecret" : "test12"
 }
